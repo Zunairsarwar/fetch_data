@@ -10,6 +10,7 @@ public class book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     @Column(name = "id")
     Integer id;
 

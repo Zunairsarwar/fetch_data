@@ -2,11 +2,7 @@ package com.library.fetch_data;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 @Service
@@ -15,9 +11,8 @@ public class BookService {
     @Autowired
     bookRepository bookRepository;
 
-    List<book> getAlldata(){
-        return bookRepository.findAll();
-    }
+    @Autowired
+    BookDetailRepo bookDetailRepo;
 //
 //    List<book> getDataById(Integer id){
 //        return bookRepository.findAllById(id);
@@ -31,14 +26,22 @@ public class BookService {
 //        return bookRepository.getAllById();
 //    }
 
-
-
-    List<book> getAlldataById(Integer id){
-        return bookRepository.getAllById(id);
+    public List<book> getAlldata(){
+        return this.bookRepository.findAll();
     }
 
-    List<book> getAllByJoins(){
-        return bookRepository.getAllById();
+    public book getBookById(Integer book_id) {
+        return this.bookRepository.getAllById(book_id);
+    }
+
+    public book getBookByName(String bookName) {
+        return this.bookRepository.getAllByName(bookName);
+    }
+
+    public List<catagories> getBookDetail() { return this.bookDetailRepo.findAll(); }
+
+    public catagories getBookDetailById(Integer bookId) {
+        return this.bookDetailRepo.getAllById(bookId);
     }
 
 }
