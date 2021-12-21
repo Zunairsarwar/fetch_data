@@ -13,10 +13,10 @@ public interface bookRepository extends CrudRepository<book, Long> {
     @Query(value = "select * from book", nativeQuery = true)
     List<book> findAll();
 
-    @Query(value="select * from book where book.id= :book_id", nativeQuery=true)
+    @Query(value="select * from book where book.id=:book_id", nativeQuery=true)
     book getAllById(@Param("book_id") Integer book_id);
 
-    @Query(value="select * from book where book.name= :bookName", nativeQuery=true)
-    book getAllByName(@Param("bookName") String bookName);
+    @Query(value="select * from book where book.name=:book_name", nativeQuery=true)
+    book getAllByName(@Param("book_name") String book_name);
 
 }

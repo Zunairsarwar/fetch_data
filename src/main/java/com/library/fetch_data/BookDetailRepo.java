@@ -14,7 +14,7 @@ public interface BookDetailRepo extends CrudRepository<catagories, Long> {
     List<catagories> findAll();
 
     // joins
-    @Query(value = "select * from book inner join catagories on book.id = catagories.book_id where book.id = :bookId", nativeQuery = true)
-    catagories getAllById(@Param("bookId") Integer bookId);
+    @Query(value = "select * from book inner join catagories on book.id = catagories.book_id where book.id=:book_id", nativeQuery = true)
+    catagories getAllById(@Param("book_id") Integer book_id);
 
 }

@@ -10,9 +10,7 @@ public class BookDTO {
     public static JsonArray getResponseJson(List<book> b) {
         JsonArray jsonArray = new JsonArray();
         for (book books : b){
-            JsonObject jObj = new JsonObject();
-            jObj.addProperty("id" , books.getId());
-            jObj.addProperty("name" , books.getName());
+            JsonObject jObj = getResponseJson1(books);
             jsonArray.add(jObj);
         }
         return jsonArray;
@@ -30,13 +28,7 @@ public class BookDTO {
     public static JsonArray getResponseJson2(List<catagories> b) {
         JsonArray jsonArray = new JsonArray();
         for (catagories books : b) {
-            JsonObject jObj = new JsonObject();
-            jObj.addProperty("id", books.getId());
-            jObj.addProperty("bookId", books.getBook_id());
-            jObj.addProperty("customerId", books.getCustomer_id());
-            jObj.addProperty("authorName", books.getAuthor_name());
-            jObj.addProperty("pages", books.getPages());
-            jObj.addProperty("publishDate", books.getPublish_date());
+            JsonObject jObj = getResponseJson3(books);
             jsonArray.add(jObj);
         }
         return jsonArray;
@@ -46,11 +38,11 @@ public class BookDTO {
         JsonObject jObj = new JsonObject();
 
         jObj.addProperty("id" , books.getId());
-        jObj.addProperty("bookId" , books.getBook_id());
-        jObj.addProperty("customerId" , books.getCustomer_id());
-        jObj.addProperty("authorName" , books.getAuthor_name());
+        jObj.addProperty("book_id" , books.getBook_id());
+        jObj.addProperty("customer_id" , books.getCustomer_id());
+        jObj.addProperty("author-name" , books.getAuthor_name());
         jObj.addProperty("pages" , books.getPages());
-        jObj.addProperty("publishDate" , books.getPublish_date());
+        jObj.addProperty("publish_date" , books.getPublish_date());
 
         return jObj;
     }
