@@ -1,10 +1,10 @@
-package com.library.fetch_data;
+package com.library.fetch_data.Model;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "catagories")
-public class catagories {
+public class Catagories {
 
     // properties
     @Id

@@ -1,4 +1,4 @@
-package com.library.fetch_data;
+package com.library.fetch_data.Model;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "book")
-public class book {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
